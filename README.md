@@ -4,8 +4,12 @@ A plugin to Drone Plug-in for sending status emails through a SMTP server.
 
 The following settings changes this plugin's behavior.
 
-* param1 (optional) does something.
-* param2 (optional) does something different.
+* SmtpHost
+* SmtpPort
+* SmtpUsername
+* SmtpPassword
+* EmailSender (optional)
+* EmailRecipient
 
 Below is an example `.drone.yml` that uses this plugin.
 
@@ -18,8 +22,12 @@ steps:
   image: markogacesa/drone-plugin-smtp-emailer
   pull: if-not-exists
   settings:
-    param1: foo
-    param2: bar
+    smtp_host: smtp.gmail.com
+    smtp_port: 456
+    smtp_username: emailer42
+    smtp_password: p4$$w0rd
+    email_sender: noreply@drone.io
+    email_recipient: watcher@example.com
 ```
 
 # Building
