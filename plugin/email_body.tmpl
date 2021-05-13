@@ -6,7 +6,12 @@
 <br/>
 
 <p>
-    Build status: <span style="color: {{if .IsSuccess}}green{{else}}red{{end}}">{{.Status}}</span>
+    Build status:
+    {{if .IsSuccess}}
+        <span style="color: green">SUCCESS</span>
+    {{else}}
+        <span style="color: red">FAILURE</span>
+    {{end}}
 </p>
 
 <p>
