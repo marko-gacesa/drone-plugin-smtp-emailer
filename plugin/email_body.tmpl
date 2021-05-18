@@ -1,0 +1,39 @@
+<p>
+    A new <b>{{.Build.Event}}</b> has been triggered<br/>
+    at the repository <b>{{.Repo.Link}}</b>
+</p>
+
+<br/>
+
+<p>
+    Build status:
+    {{if .IsSuccess}}
+        <span style="color: green">SUCCESS</span>
+    {{else}}
+        <span style="color: red">FAILURE</span>
+    {{end}}
+</p>
+
+<p>
+    Open the build in browser to see details by clicking on the link below:<br/>
+    <a target="_blank" href="{{.Build.Link}}">{{.Build.Link}}</a>
+</p>
+
+<br/>
+
+<p>
+    {{with .Author}}
+        Author: <b>{{.Username}}</b><br/>
+    {{end}}
+    {{with .Commit}}
+        Message: {{.Message}}<br/>
+        Branch: {{.Branch}}<br/>
+        Link: <a target="_blank" href="{{.Link}}">{{.Link}}</a>
+    {{end}}
+</p>
+
+<br/>
+
+<p>
+    This email is sent automatically by Drone SMTP plug-in. Please do not reply.
+</p>
